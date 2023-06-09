@@ -9,6 +9,7 @@ import {
 import { useState } from "react";
 import AppLayout from "./AppLayout";
 import { Button } from "react95";
+import WindowIcon from "./WindowIcon";
 
 const Home = () => {
   const navigate = useNavigate(); // useNavigate 사용
@@ -23,9 +24,17 @@ const Home = () => {
   return (
     <AppLayout
       Children={
-        <div>
-          <Button onClick={handleLoginClick}>로그인</Button>
-          <Button onClick={handleSignUpClick}>회원가입</Button>
+        <div style={{ display: "flex" }}>
+          <WindowIcon
+            func={handleLoginClick}
+            ImageUrl="https://user-images.githubusercontent.com/86397600/244757002-fd487db0-cc0d-4854-8e6c-f0fd1d1cee20.png"
+            IconName="로그인."
+          />
+          <WindowIcon
+            func={handleSignUpClick}
+            ImageUrl="https://user-images.githubusercontent.com/86397600/244757628-cca27d46-1753-4095-b299-87bd6b0c813b.png"
+            IconName="회원가입."
+          />
         </div>
       }
     ></AppLayout>

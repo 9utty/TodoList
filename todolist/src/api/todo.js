@@ -16,7 +16,7 @@ export const postTodo = (content) => {
 export const updateTodo = (todoId, content, isCompleted) => {
   const API = `http://127.0.0.1:8000/todos/${todoId}`;
 
-  return instance.post(API, {
+  return instance.put(API, {
     todo: content,
     isCompleted: isCompleted,
   });

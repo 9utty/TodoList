@@ -5,6 +5,7 @@ import {
   Window,
   WindowHeader,
   WindowContent,
+  TextInput,
 } from "react95";
 import { useNavigate } from "react-router-dom";
 import { loginAPI } from "../api/login";
@@ -61,7 +62,12 @@ const LoginPage = () => {
         <MyModal>
           <Window style={{ width: 300 }}>
             <WindowHeader
-              style={{ justifyContent: "space-between", display: "flex" }}
+              style={{
+                justifyContent: "space-between",
+                display: "flex",
+                fontFamily: "dunggeunmo-bold",
+                fontSize: "23px",
+              }}
             >
               Sign In
               <Button style={{ marginTop: "3px" }} onClick={close}>
@@ -73,22 +79,23 @@ const LoginPage = () => {
               </Button>
             </WindowHeader>
             <WindowContent>
-              <TextField
+              <TextInput
                 data-testid="email-input"
-                style={{ marginBottom: 15 }}
+                style={{ marginBottom: 15, fontFamily: "dunggeunmo-bold" }}
                 fullWidth
                 type="email"
                 placeholder="Email"
                 value={email}
                 onChange={handleEmailChange}
               />
-              <TextField
+              <TextInput
                 data-testid="password-input"
                 fullWidth
                 type="password"
                 placeholder="Password"
                 value={password}
                 onChange={handlePasswordChange}
+                style={{ fontFamily: "dunggeunmo-bold" }}
               />
               <div style={{ marginTop: 20 }}>
                 <Button
@@ -97,6 +104,7 @@ const LoginPage = () => {
                   fullWidth
                   disabled={!isEmailValid || !isPasswordValid}
                   onClick={handleSubmit}
+                  style={{ fontFamily: "dunggeunmo-bold" }}
                 >
                   Login
                 </Button>

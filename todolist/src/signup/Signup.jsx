@@ -5,6 +5,7 @@ import {
   Window,
   WindowHeader,
   WindowContent,
+  TextInput,
 } from "react95";
 import MyModal from "../components/Modal";
 import { useNavigate } from "react-router-dom";
@@ -61,7 +62,12 @@ const Signup = () => {
         <MyModal>
           <Window style={{ width: 300 }}>
             <WindowHeader
-              style={{ justifyContent: "space-between", display: "flex" }}
+              style={{
+                justifyContent: "space-between",
+                display: "flex",
+                fontFamily: "dunggeunmo-bold",
+                fontSize: "23px",
+              }}
             >
               Sign Up
               <Button style={{ marginTop: "3px" }} onClick={close}>
@@ -73,22 +79,23 @@ const Signup = () => {
               </Button>
             </WindowHeader>
             <WindowContent>
-              <TextField
+              <TextInput
                 data-testid="email-input"
-                style={{ marginBottom: 15 }}
+                style={{ fontFamily: "dunggeunmo-bold", marginBottom: 15 }}
                 fullWidth
                 type="email"
                 placeholder="Email"
                 value={email}
                 onChange={handleEmailChange}
               />
-              <TextField
+              <TextInput
                 data-testid="password-input"
                 fullWidth
                 type="password"
                 placeholder="Password"
                 value={password}
                 onChange={handlePasswordChange}
+                style={{ fontFamily: "dunggeunmo-bold" }}
               />
               <div style={{ marginTop: 20 }}>
                 <Button
@@ -96,6 +103,7 @@ const Signup = () => {
                   type="submit"
                   fullWidth
                   disabled={!isEmailValid || !isPasswordValid}
+                  style={{ fontFamily: "dunggeunmo-bold" }}
                 >
                   Submit
                 </Button>
